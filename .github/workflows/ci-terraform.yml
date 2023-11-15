@@ -1,0 +1,25 @@
+---
+name: CI - Terraform
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - '*'
+
+defaults:
+  run:
+    working-directory: ./src/cloud/infrastructure
+
+jobs:
+  terraform:
+    name: Terraform
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v4
