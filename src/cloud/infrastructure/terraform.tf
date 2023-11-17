@@ -15,6 +15,7 @@ terraform {
     # DOCS: https://registry.terraform.io/providers/tailscale/tailscale/latest/docs
     # ENVS: TAILSCALE_OAUTH_CLIENT_ID, TAILSCALE_OAUTH_CLIENT_SECRET
     # CRED: https://login.tailscale.com/admin/settings/oauth -> terraform-cloud-infrastructure
+    # PERM: scopes:all
     # PREF: ktxGCS
     tailscale = {
       source = "tailscale/tailscale"
