@@ -12,9 +12,20 @@ terraform {
   }
 
   required_providers {
+    # DOCS: https://registry.terraform.io/providers/integrations/github/latest/docs
+    # ENVS: GITHUB_TOKEN
+    # CRED: https://github.com/settings/tokens
+    # NAME: terraform-cloud-infrastructure
+    # PERM: ''
+    # PREF: ghp_pwq
+    github = {
+      source = "integrations/github"
+    }
+
     # DOCS: https://registry.terraform.io/providers/tailscale/tailscale/latest/docs
     # ENVS: TAILSCALE_OAUTH_CLIENT_ID, TAILSCALE_OAUTH_CLIENT_SECRET
-    # CRED: https://login.tailscale.com/admin/settings/oauth -> terraform-cloud-infrastructure
+    # CRED: https://login.tailscale.com/admin/settings/oauth
+    # NAME: terraform-cloud-infrastructure
     # PERM: scopes:all
     # PREF: ktxGCS
     tailscale = {
