@@ -10,6 +10,9 @@ init:
 plan: init
 	terraform -chdir=$(TF_DIR) plan
 
+format:
+	terraform -chdir=$(TF_DIR) fmt -recursive
+
 ## Debug
 
 version:
