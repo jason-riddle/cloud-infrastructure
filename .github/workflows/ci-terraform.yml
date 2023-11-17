@@ -40,3 +40,7 @@ jobs:
       - name: Terraform Init
         id: init
         run: make init
+
+      - name: Terraform Validate
+        id: validate
+        run: make validate

@@ -13,6 +13,9 @@ plan: init
 format:
 	terraform -chdir=$(TF_DIR) fmt -recursive
 
+validate:
+	terraform -chdir=$(TF_DIR) validate
+
 ## CI
 
 fmt-check:
