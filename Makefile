@@ -1,6 +1,11 @@
 .DEFAULT_GOAL := version
 
-## Terraform
+## Workflow
+
+init:
+	terraform init -upgrade
+
+## Debug
 
 version:
 	terraform version
