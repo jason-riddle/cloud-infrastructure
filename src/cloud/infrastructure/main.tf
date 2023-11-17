@@ -1,3 +1,7 @@
+module "aws" {
+  source = "./aws/accounts/personal"
+}
+
 module "gh_homelab" {
   source = "./github/repos/homelab"
 }
