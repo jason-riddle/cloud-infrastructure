@@ -9,9 +9,9 @@ on:
     branches:
       - '*'
 
-defaults:
-  run:
-    working-directory: ./src/cloud/infrastructure
+# defaults:
+#   run:
+#     working-directory: ./src/cloud/infrastructure
 
 jobs:
   terraform:
