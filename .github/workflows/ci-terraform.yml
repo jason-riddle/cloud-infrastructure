@@ -36,3 +36,7 @@ jobs:
       - name: Terraform Format Check
         id: fmt
         run: make fmt-check
+
+      - name: Terraform Init
+        id: init
+        run: make init
