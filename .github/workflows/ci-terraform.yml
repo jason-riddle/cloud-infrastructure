@@ -32,3 +32,7 @@ jobs:
           # NAME: terraform-cloud-infrastructure
           # PREF: Kshzsh
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
+      - name: Terraform Format
+        id: fmt
+        run: make ci-fmt
