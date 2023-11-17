@@ -7,6 +7,9 @@ TF_DIR = src/cloud/infrastructure
 init:
 	terraform -chdir=$(TF_DIR) init -upgrade
 
+plan:
+	terraform -chdir=$(TF_DIR) plan
+
 ## Debug
 
 version:
