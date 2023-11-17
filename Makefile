@@ -15,7 +15,7 @@ format:
 
 ## CI
 
-ci-fmt:
+fmt-check:
 	terraform -chdir=$(TF_DIR) fmt -check -recursive -diff
 
 ## Debug
