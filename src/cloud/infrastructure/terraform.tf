@@ -12,6 +12,16 @@ terraform {
   }
 
   required_providers {
+    # DOCS: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+    # ENVS: AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+    # CRED: https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users/details/terraform-cloud-infrastructure?section=permissions
+    # NAME: terraform-cloud-infrastructure
+    # PERM: AdministratorAccess
+    # PREF: AKIAR42
+    aws = {
+      source = "hashicorp/aws"
+    }
+
     # DOCS: https://registry.terraform.io/providers/integrations/github/latest/docs
     # ENVS: GITHUB_TOKEN
     # CRED: https://github.com/settings/tokens
