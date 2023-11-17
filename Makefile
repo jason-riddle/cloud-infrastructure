@@ -13,6 +13,11 @@ plan: init
 format:
 	terraform -chdir=$(TF_DIR) fmt -recursive
 
+## CI
+
+ci-fmt:
+	terraform -chdir=$(TF_DIR) fmt -check -recursive -diff
+
 ## Debug
 
 version:
