@@ -8,7 +8,7 @@ data "aws_partition" "current" {}
 #   attach_admin_policy     = true
 #   attach_read_only_policy = false
 
-#   iam_role_name = "terraform-cloud-infrastructure-oidc-github"
+#   iam_role_name = "terraform-cloud-infrastructure-aws-oidc-github"
 
 #   github_repositories = [
 #     "jason-riddle/cloud-infrastructure",
