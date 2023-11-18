@@ -2,10 +2,10 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
-output "aws_oidc_github_iam_role_arn" {
-  value     = module.aws.aws_oidc_github_iam_role_arn
-  sensitive = true
-}
+# output "aws_oidc_github_iam_role_arn" {
+#   value     = module.aws.aws_oidc_github_iam_role_arn
+#   sensitive = true
+# }
 
 module "gh_homelab" {
   source = "./github/repos/homelab"
