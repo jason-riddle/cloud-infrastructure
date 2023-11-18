@@ -13,10 +13,10 @@ plan: init
 apply: init
 	terraform -chdir=$(TF_DIR) apply
 
-format:
+fmt:
 	terraform -chdir=$(TF_DIR) fmt -recursive
 
-validate:
+validate: init
 	terraform -chdir=$(TF_DIR) validate
 
 ## CI
