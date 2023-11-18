@@ -26,5 +26,8 @@ fmt-check:
 
 ## Debug
 
+output: init
+	terraform -chdir=$(TF_DIR) output -json
+
 version:
 	terraform -chdir=$(TF_DIR) version
