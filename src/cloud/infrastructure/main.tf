@@ -2,8 +2,8 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
-# output "aws_oidc_github_iam_role_arn" {
-#   value     = module.aws.aws_oidc_github_iam_role_arn
+# output "oidc_github_iam_role_arn" {
+#   value     = module.aws.oidc_github_iam_role_arn
 #   sensitive = true
 # }
 

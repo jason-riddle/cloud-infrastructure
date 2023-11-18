@@ -1,6 +1,6 @@
 data "aws_partition" "current" {}
 
-module "aws_oidc_github" {
+module "oidc_github" {
   source  = "unfunco/oidc-github/aws"
   version = "1.7.1"
   enabled = false
@@ -15,7 +15,7 @@ module "aws_oidc_github" {
   ]
 }
 
-# output "aws_oidc_github_iam_role_arn" {
-#   value     = module.aws_oidc_github.iam_role_arn
+# output "oidc_github_iam_role_arn" {
+#   value     = module.oidc_github.iam_role_arn
 #   sensitive = true
 # }
