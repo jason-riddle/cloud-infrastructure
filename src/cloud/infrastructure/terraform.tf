@@ -41,5 +41,15 @@ terraform {
     tailscale = {
       source = "tailscale/tailscale"
     }
+
+    # DOCS: https://registry.terraform.io/providers/hashicorp/tfe/latest/docs
+    # ENVS: TFE_TOKEN
+    # CRED: https://app.terraform.io/app/settings/tokens
+    # NAME: terraform-cloud-infrastructure
+    # PERM: ''
+    # PREF: Kshzsh
+    tfe = {
+      source = "hashicorp/tfe"
+    }
   }
 }
