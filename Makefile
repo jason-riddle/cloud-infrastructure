@@ -24,6 +24,9 @@ validate:
 fmt-check:
 	terraform -chdir=$(TF_DIR) fmt -check -recursive -diff
 
+apply-auto-approve:
+	terraform -chdir=$(TF_DIR) apply -auto-approve
+
 ## Debug
 
 output: init
