@@ -17,6 +17,10 @@ output "oidc_github_oidc_provider_arn" {
   sensitive = true
 }
 
+module "gh_cloud_infrastructure" {
+  source = "./github/repos/cloud-infrastructure"
+}
+
 module "gh_homelab" {
   source = "./github/repos/homelab"
 }
