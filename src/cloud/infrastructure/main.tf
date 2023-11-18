@@ -7,6 +7,16 @@ output "oidc_github_iam_role_arn" {
   sensitive = true
 }
 
+output "oidc_github_iam_role_name" {
+  value     = module.aws.oidc_github_iam_role_name
+  sensitive = true
+}
+
+output "oidc_github_oidc_provider_arn" {
+  value     = module.aws.oidc_github_oidc_provider_arn
+  sensitive = true
+}
+
 module "gh_homelab" {
   source = "./github/repos/homelab"
 }
