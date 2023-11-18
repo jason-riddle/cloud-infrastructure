@@ -3,7 +3,7 @@ data "aws_partition" "current" {}
 module "oidc_github" {
   source  = "unfunco/oidc-github/aws"
   version = "1.7.1"
-  enabled = false
+  enabled = true
 
   attach_admin_policy     = true
   attach_read_only_policy = false
