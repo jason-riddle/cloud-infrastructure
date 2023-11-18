@@ -7,7 +7,7 @@ data "aws_partition" "current" {}
 module "tfstate_backend" {
   source  = "cloudposse/tfstate-backend/aws"
   version = "1.3.0"
-  enabled = true
+  enabled = false
 
   name = "terraform-cloud-infrastructure-tfstate-backend"
 
