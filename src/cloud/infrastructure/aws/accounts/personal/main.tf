@@ -15,7 +15,7 @@ module "oidc_github" {
   ]
 }
 
-# output "oidc_github_iam_role_arn" {
-#   value     = module.oidc_github.iam_role_arn
-#   sensitive = true
-# }
+output "oidc_github_iam_role_arn" {
+  value     = module.oidc_github.iam_role_arn
+  sensitive = true
+}
