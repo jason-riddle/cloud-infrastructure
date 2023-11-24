@@ -1,5 +1,5 @@
 locals {
-  enable_zone = true
+  enable_zone = false
 }
 
 resource "aws_route53_zone" "zone" {
