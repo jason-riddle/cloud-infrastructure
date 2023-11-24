@@ -7,7 +7,7 @@ resource "aws_route53_zone" "jasonriddle_com" {
 }
 
 resource "aws_route53_record" "example_cname_record" {
-  zone_id = aws_route53_zone.jasonriddle_com.zone_id
+  zone_id = aws_route53_zone.jasonriddle_com[*].zone_id
   name    = "www"  # Set the subdomain
   type    = "A"
   ttl     = 300    # Set the Time to Live (TTL) in seconds
