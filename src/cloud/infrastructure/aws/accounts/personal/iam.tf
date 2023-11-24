@@ -13,8 +13,9 @@
 # }
 
 module "iam_user" {
-  source  = "terraform-aws-modules/iam/aws//modules/iam-user"
-  version = "~> 5.0"
+  source      = "terraform-aws-modules/iam/aws//modules/iam-user"
+  version     = "~> 5.0"
+  create_user = true
 
   name = "vasya.pupkin4"
 
@@ -22,13 +23,21 @@ module "iam_user" {
   create_iam_user_login_profile = false
 }
 
-# module "iam_group" {
-#   source  = "terraform-aws-modules/iam/aws//modules/iam-group-with-assumable-roles-policy"
-#   version = "~> 5.0"
+module "iam_group" {
+  source       = "terraform-aws-modules/iam/aws//modules/iam-group-with-policies"
+  version      = "~> 5.0"
+  create_group = true
 
-#   name = "test-admins"
+  name = "test-admins"
 
-#   group_users = [
-#     module.iam_user.iam_user_name,
-#   ]
-# }
+  attach_iam_self_management_policy = false
+  enable_mfa_enforcement            = false
+
+  group_users = [
+    module.iam_user.iam_user_name,
+  ]
+
+  custom_group_policy_arns = [
+    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+  ]
+}
