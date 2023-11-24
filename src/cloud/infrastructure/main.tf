@@ -17,6 +17,10 @@ output "oidc_github_oidc_provider_arn" {
   sensitive = true
 }
 
+output "zone_name_servers" {
+  value = module.aws.zone_name_servers
+}
+
 module "gh_cloud_infrastructure" {
   source = "./github/repos/cloud-infrastructure"
 }
