@@ -1,4 +1,4 @@
-resource "aws_route53_zone" "riddleapps_net" {
+resource "aws_route53_zone" "zone" {
   count = 1
 
   name          = "riddleapps.net"
@@ -6,14 +6,14 @@ resource "aws_route53_zone" "riddleapps_net" {
   force_destroy = true
 }
 
-resource "aws_route53_record" "nextcloud_riddleapps_net" {
-  zone_id = aws_route53_zone.jasonriddle_com[*].zone_id
+resource "aws_route53_record" "nextcloud" {
+  zone_id = aws_route53_zone.zone[*].zone_id
   name    = "nextcloud"
   type    = "CNAME"
   ttl     = 300
   records = ["nx15310.your-storageshare.de"]
 }
 
-output "riddleapps_net_name_servers" {
-  value = aws_route53_zone.riddleapps_net[*].name_servers
+output "zone_name_servers" {
+  value = aws_route53_zone.zone[*].name_servers
 }
