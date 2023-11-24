@@ -1,5 +1,5 @@
 resource "aws_route53_zone" "riddleproperty_com" {
-  count = 1
+  count = 0
 
   name          = "riddleproperty.com"  # Set your domain name
   comment       = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
