@@ -1,5 +1,5 @@
 resource "aws_route53_zone" "jasonriddle_com" {
-  count = 1
+  count = 0
 
   name          = "jasonriddle.com"
   comment       = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
