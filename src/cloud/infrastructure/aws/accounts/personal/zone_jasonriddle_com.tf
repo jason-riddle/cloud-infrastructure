@@ -6,7 +6,7 @@ resource "aws_route53_zone" "jasonriddle_com" {
   force_destroy = true
 }
 
-resource "aws_route53_record" "example_cname_record" {
+resource "aws_route53_record" "www_jasonriddle_com" {
   zone_id = aws_route53_zone.jasonriddle_com[*].zone_id
   name    = "www"  # Set the subdomain
   type    = "A"
