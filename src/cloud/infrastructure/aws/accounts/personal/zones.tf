@@ -23,9 +23,9 @@ module "records" {
 
   records = [
     {
-      name    = "nextcloud"
-      type    = "CNAME"
-      ttl     = 3600
+      name = "nextcloud"
+      type = "CNAME"
+      ttl  = 3600
       records = [
         "nx15310.your-storageshare.de",
       ]
