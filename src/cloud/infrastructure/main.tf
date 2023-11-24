@@ -2,24 +2,24 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
-output "oidc_github_iam_role_arn" {
-  value     = module.aws.oidc_github_iam_role_arn
-  sensitive = true
-}
+# output "oidc_github_iam_role_arn" {
+#   value     = module.aws.oidc_github_iam_role_arn
+#   sensitive = true
+# }
 
-output "oidc_github_iam_role_name" {
-  value     = module.aws.oidc_github_iam_role_name
-  sensitive = true
-}
+# output "oidc_github_iam_role_name" {
+#   value     = module.aws.oidc_github_iam_role_name
+#   sensitive = true
+# }
 
-output "oidc_github_oidc_provider_arn" {
-  value     = module.aws.oidc_github_oidc_provider_arn
-  sensitive = true
-}
+# output "oidc_github_oidc_provider_arn" {
+#   value     = module.aws.oidc_github_oidc_provider_arn
+#   sensitive = true
+# }
 
-output "zone_name_servers" {
-  value = module.aws.zone_name_servers
-}
+# output "zone_name_servers" {
+#   value = module.aws.zone_name_servers
+# }
 
 module "gh_cloud_infrastructure" {
   source = "./github/repos/cloud-infrastructure"
