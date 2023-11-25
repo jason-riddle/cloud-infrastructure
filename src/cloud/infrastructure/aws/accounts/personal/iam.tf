@@ -120,6 +120,10 @@ module "iam_user" {
 
   create_iam_access_key         = false
   create_iam_user_login_profile = false
+
+  policy_arns = [
+    "arn:aws:iam::aws:policy/AdministratorAccess"
+  ]
 }
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
@@ -132,6 +136,10 @@ module "iam_system_user" {
 
   create_iam_access_key         = true
   create_iam_user_login_profile = false
+
+  policy_arns = [
+    "arn:aws:iam::aws:policy/AdministratorAccess"
+  ]
 }
 
 output "iam_system_user_access_key_id" {
