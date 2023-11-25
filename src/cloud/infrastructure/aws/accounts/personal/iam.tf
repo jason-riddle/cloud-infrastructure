@@ -1,42 +1,59 @@
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-github-oidc-provider
-# module "iam_github_oidc_provider" {
-#   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-provider"
-#   version = "~> 5.0"
-#   create  = true
-# }
+module "iam_github_oidc_provider" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-provider"
+  version = "~> 5.0"
+  create  = true
+}
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-github-oidc-role
-# module "iam_github_oidc_role" {
-#   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
-#   version = "~> 5.0"
-#   create  = true
+module "iam_github_oidc_role" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
+  version = "~> 5.0"
+  create  = true
 
-#   subjects = [
-#     # You can prepend with `repo:` but it is not required
-#     "jason-riddle/cloud-infrastructure"
-#     # "repo:jason-riddle/cloud-infrastructure"
-#     # "repo:jason-riddle/cloud-infrastructure:pull_request",
-#     # "repo:jason-riddle/cloud-infrastructure:ref:refs/heads/main",
-#   ]
-# }
+  name = "terraform-iam-github-oidc-role"
 
-module "iam_assumable_role_self_assume" {
+  subjects = [
+    # You can prepend with `repo:` but it is not required
+    "jason-riddle/cloud-infrastructure"
+    # "repo:jason-riddle/cloud-infrastructure"
+    # "repo:jason-riddle/cloud-infrastructure:pull_request",
+    # "repo:jason-riddle/cloud-infrastructure:ref:refs/heads/main",
+  ]
+}
+
+data "tls_certificate" "app_terraform_io" {
+  count = 1
+
+  url = "https://app.terraform.io"
+}
+
+resource "aws_iam_openid_connect_provider" "app_terraform_io" {
+  count = 1
+
+  url             = "https://app.terraform.io"
+  client_id_list  = ["aws.workload.identity"]
+  thumbprint_list = data.tls_certificate.app_terraform_io[0].certificates[*].sha1_fingerprint
+}
+
+# https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-assumable-role-with-oidc
+module "iam_terraform_cloud_oidc_role" {
   source      = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
   version     = "~> 5.0"
   create_role = true
 
-  role_name = "role-with-oidc-self-assume"
+  role_name = "terraform-iam-terraform-cloud-oidc-role"
 
   allow_self_assume_role = false
 
-  provider_url  = "oidc.eks.eu-west-1.amazonaws.com/id/BA9E170D464AF7B92084EF72A69B9DC8"
-  provider_urls = ["oidc.eks.eu-west-1.amazonaws.com/id/AA9E170D464AF7B92084EF72A69B9DC8"]
+  provider_url = "app.terraform.io"
 
   role_policy_arns = [
-    "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
   ]
 
-  oidc_fully_qualified_subjects = ["system:serviceaccount:default:sa1", "system:serviceaccount:default:sa2"]
+  oidc_fully_qualified_audiences = ["aws.workload.identity"]
+  oidc_fully_qualified_subjects  = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
 }
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
