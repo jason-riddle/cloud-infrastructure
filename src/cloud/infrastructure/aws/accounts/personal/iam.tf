@@ -150,10 +150,9 @@ output "iam_system_user_access_key_secret" {
 module "iam_group" {
   source       = "terraform-aws-modules/iam/aws//modules/iam-group-with-policies"
   version      = "~> 5.0"
-  create_group = false
+  create_group = true
 
-  name = "admins"
-  # name = "super-administrators"
+  name = "super-administrators"
 
   enable_mfa_enforcement = false
 
