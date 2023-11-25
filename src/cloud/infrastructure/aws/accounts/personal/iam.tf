@@ -22,6 +22,10 @@ module "iam_github_oidc_role" {
     # "repo:jason-riddle/cloud-infrastructure:pull_request",
     # "repo:jason-riddle/cloud-infrastructure:ref:refs/heads/main",
   ]
+
+  policies = {
+    AdministratorAccess = "arn:aws:iam::aws:policy/AdministratorAccess"
+  }
 }
 
 ### AWS - IAM - GitHub - OIDC - Outputs
@@ -75,7 +79,7 @@ module "iam_terraform_cloud_oidc_role" {
   provider_url = "app.terraform.io"
 
   role_policy_arns = [
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+    "arn:aws:iam::aws:policy/AdministratorAccess",
   ]
 
   oidc_fully_qualified_audiences = ["aws.workload.identity"]
@@ -127,6 +131,7 @@ module "iam_group" {
   create_group = true
 
   name = "admins"
+  # name = "super-administrators"
 
   enable_mfa_enforcement = false
 
@@ -138,6 +143,6 @@ module "iam_group" {
   ]
 
   custom_group_policy_arns = [
-    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+    "arn:aws:iam::aws:policy/AdministratorAccess",
   ]
 }
