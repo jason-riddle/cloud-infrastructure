@@ -134,26 +134,15 @@ module "system_user" {
   create_iam_user_login_profile = false
 }
 
-# output "iam_access_key_id" {
-#   value     = module.system_user.iam_access_key_id
-#   sensitive = true
-# }
+output "iam_access_key_id" {
+  value     = module.system_user.iam_access_key_id
+  sensitive = true
+}
 
-# output "iam_access_key_secret" {
-#   value     = module.system_user.iam_access_key_secret
-#   sensitive = true
-# }
-
-# output "iam_access_key_id" {
-#   description = "The access key ID"
-#   value       = try(aws_iam_access_key.this[0].id, aws_iam_access_key.this_no_pgp[0].id, "")
-# }
-
-# output "iam_access_key_secret" {
-#   description = "The access key secret"
-#   value       = try(aws_iam_access_key.this_no_pgp[0].secret, "")
-#   sensitive   = true
-# }
+output "iam_access_key_secret" {
+  value     = module.system_user.iam_access_key_secret
+  sensitive = true
+}
 
 ## AWS - IAM - Groups
 
