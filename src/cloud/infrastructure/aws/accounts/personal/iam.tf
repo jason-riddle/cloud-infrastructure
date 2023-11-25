@@ -161,7 +161,7 @@ module "iam_group" {
 
   group_users = [
     module.iam_user.iam_user_name,
-    module.system_user.iam_user_name,
+    module.iam_system_user.iam_user_name,
   ]
 
   custom_group_policy_arns = [
