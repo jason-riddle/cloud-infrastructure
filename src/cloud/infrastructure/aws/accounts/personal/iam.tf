@@ -30,8 +30,10 @@ module "iam_group" {
 
   name = "test-admins"
 
-  attach_iam_self_management_policy = false
-  enable_mfa_enforcement            = false
+  enable_mfa_enforcement = false
+
+  attach_iam_self_management_policy      = false
+  iam_self_management_policy_name_prefix = "testing-"
 
   group_users = [
     module.iam_user.iam_user_name,
