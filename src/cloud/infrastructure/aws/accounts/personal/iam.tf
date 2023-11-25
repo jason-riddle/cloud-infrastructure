@@ -10,8 +10,15 @@
 #   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
 #   version = "~> 5.0"
 #   create  = true
+
+#   subjects = [
+#     # You can prepend with `repo:` but it is not required
+#     "repo:terraform-aws-modules/terraform-aws-iam:pull_request",
+#     "terraform-aws-modules/terraform-aws-iam:ref:refs/heads/master",
+#   ]
 # }
 
+# https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
 module "iam_user" {
   source      = "terraform-aws-modules/iam/aws//modules/iam-user"
   version     = "~> 5.0"
@@ -23,6 +30,7 @@ module "iam_user" {
   create_iam_user_login_profile = false
 }
 
+# https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-group-with-policies
 module "iam_group" {
   source       = "terraform-aws-modules/iam/aws//modules/iam-group-with-policies"
   version      = "~> 5.0"
