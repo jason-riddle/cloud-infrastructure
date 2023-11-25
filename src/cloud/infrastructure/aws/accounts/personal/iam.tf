@@ -1,3 +1,5 @@
+## ODIC - GitHub
+
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-github-oidc-provider
 module "iam_github_oidc_provider" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-provider"
@@ -21,6 +23,30 @@ module "iam_github_oidc_role" {
     # "repo:jason-riddle/cloud-infrastructure:ref:refs/heads/main",
   ]
 }
+
+### Outputs
+
+output "iam_github_oidc_role_arn" {
+  value     = module.iam_github_oidc_role.arn
+  sensitive = true
+}
+
+output "iam_github_oidc_role_name" {
+  value     = module.iam_github_oidc_role.name
+  sensitive = true
+}
+
+output "iam_github_oidc_role_path" {
+  value     = module.iam_github_oidc_role.path
+  sensitive = true
+}
+
+output "iam_github_oidc_role_unique_id" {
+  value     = module.iam_github_oidc_role.unique_id
+  sensitive = true
+}
+
+## ODIC - Terraform Cloud
 
 data "tls_certificate" "app_terraform_io" {
   count = 1
@@ -56,6 +82,30 @@ module "iam_terraform_cloud_oidc_role" {
   oidc_fully_qualified_subjects  = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
 }
 
+### Outputs
+
+output "iam_terraform_cloud_oidc_role_arn" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_arn
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_name" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_name
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_path" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_path
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_unique_id" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_unique_id
+  sensitive = true
+}
+
+## Users
+
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
 module "iam_user" {
   source      = "terraform-aws-modules/iam/aws//modules/iam-user"
@@ -67,6 +117,8 @@ module "iam_user" {
   create_iam_access_key         = false
   create_iam_user_login_profile = false
 }
+
+## Groups
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-group-with-policies
 module "iam_group" {
