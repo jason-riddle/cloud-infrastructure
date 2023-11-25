@@ -14,23 +14,23 @@ module "zones" {
   }
 }
 
-module "records" {
-  source  = "terraform-aws-modules/route53/aws//modules/records"
-  version = "~> 2.0"
-  create  = false
+# module "records" {
+#   source  = "terraform-aws-modules/route53/aws//modules/records"
+#   version = "~> 2.0"
+#   create  = false
 
-  zone_name = keys(module.zones.route53_zone_zone_id)[0]
+#   zone_name = keys(module.zones.route53_zone_zone_id)[0]
 
-  records = [
-    {
-      name = "nextcloud"
-      type = "CNAME"
-      ttl  = 3600
-      records = [
-        "nx15310.your-storageshare.de",
-      ]
-    },
-  ]
+#   records = [
+#     {
+#       name = "nextcloud"
+#       type = "CNAME"
+#       ttl  = 3600
+#       records = [
+#         "nx15310.your-storageshare.de",
+#       ]
+#     },
+#   ]
 
-  depends_on = [module.zones]
-}
+#   depends_on = [module.zones]
+# }
