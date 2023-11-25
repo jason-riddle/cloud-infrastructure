@@ -147,24 +147,24 @@ output "iam_system_user_access_key_secret" {
 ## AWS - IAM - Groups
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-group-with-policies
-module "iam_group" {
-  source       = "terraform-aws-modules/iam/aws//modules/iam-group-with-policies"
-  version      = "~> 5.0"
-  create_group = true
+# module "iam_group" {
+#   source       = "terraform-aws-modules/iam/aws//modules/iam-group-with-policies"
+#   version      = "~> 5.0"
+#   create_group = true
 
-  name = "super-administrators"
+#   name = "administrators"
 
-  enable_mfa_enforcement = false
+#   enable_mfa_enforcement = false
 
-  attach_iam_self_management_policy      = false
-  iam_self_management_policy_name_prefix = "testing-"
+#   attach_iam_self_management_policy      = false
+#   iam_self_management_policy_name_prefix = "testing-"
 
-  group_users = [
-    module.iam_user.iam_user_name,
-    module.iam_system_user.iam_user_name,
-  ]
+#   group_users = [
+#     module.iam_user.iam_user_name,
+#     module.iam_system_user.iam_user_name,
+#   ]
 
-  custom_group_policy_arns = [
-    "arn:aws:iam::aws:policy/AdministratorAccess",
-  ]
-}
+#   custom_group_policy_arns = [
+#     "arn:aws:iam::aws:policy/AdministratorAccess",
+#   ]
+# }
