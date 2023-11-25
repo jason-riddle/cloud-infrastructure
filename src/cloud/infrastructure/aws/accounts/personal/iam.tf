@@ -9,7 +9,7 @@ module "iam_github_oidc_provider" {
 module "iam_github_oidc_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
   version = "~> 5.0"
-  create  = true
+  create  = false
 
   subjects = [
     # You can prepend with `repo:` but it is not required
