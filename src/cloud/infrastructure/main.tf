@@ -2,6 +2,46 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
+output "iam_github_oidc_role_arn" {
+  value     = module.aws.iam_github_oidc_role_arn
+  sensitive = true
+}
+
+output "iam_github_oidc_role_name" {
+  value     = module.aws.iam_github_oidc_role_name
+  sensitive = true
+}
+
+output "iam_github_oidc_role_path" {
+  value     = module.aws.iam_github_oidc_role_path
+  sensitive = true
+}
+
+output "iam_github_oidc_role_unique_id" {
+  value     = module.aws.iam_github_oidc_role_unique_id
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_arn" {
+  value     = module.aws.iam_terraform_cloud_oidc_role_arn
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_name" {
+  value     = module.aws.iam_terraform_cloud_oidc_role_name
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_path" {
+  value     = module.aws.iam_terraform_cloud_oidc_role_path
+  sensitive = true
+}
+
+output "iam_terraform_cloud_oidc_role_unique_id" {
+  value     = module.aws.iam_terraform_cloud_oidc_role_unique_id
+  sensitive = true
+}
+
 # output "oidc_github_iam_role_arn" {
 #   value     = module.aws.oidc_github_iam_role_arn
 #   sensitive = true
