@@ -62,7 +62,7 @@ module "iam_user" {
   version     = "~> 5.0"
   create_user = true
 
-  name = "vasya.pupkin4"
+  name = "jason.riddle"
 
   create_iam_access_key         = false
   create_iam_user_login_profile = false
@@ -74,7 +74,7 @@ module "iam_group" {
   version      = "~> 5.0"
   create_group = true
 
-  name = "test-admins"
+  name = "admins"
 
   enable_mfa_enforcement = false
 
