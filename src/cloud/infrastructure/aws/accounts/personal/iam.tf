@@ -123,10 +123,10 @@ module "iam_user" {
 }
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
-module "system_user" {
+module "iam_system_user" {
   source      = "terraform-aws-modules/iam/aws//modules/iam-user"
   version     = "~> 5.0"
-  create_user = false
+  create_user = true
 
   name = "terraform-cloud-infrastructure-system-user"
 
@@ -134,15 +134,15 @@ module "system_user" {
   create_iam_user_login_profile = false
 }
 
-# output "iam_access_key_id" {
-#   value     = module.system_user.iam_access_key_id
-#   sensitive = true
-# }
+output "iam_system_user_access_key_id" {
+  value     = module.iam_system_user.iam_access_key_id
+  sensitive = true
+}
 
-# output "iam_access_key_secret" {
-#   value     = module.system_user.iam_access_key_secret
-#   sensitive = true
-# }
+output "iam_system_user_access_key_secret" {
+  value     = module.iam_system_user.iam_access_key_secret
+  sensitive = true
+}
 
 ## AWS - IAM - Groups
 
