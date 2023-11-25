@@ -122,6 +122,19 @@ module "iam_user" {
   create_iam_user_login_profile = false
 }
 
+# https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
+module "system_user" {
+  source      = "terraform-aws-modules/iam/aws//modules/iam-user"
+  version     = "~> 5.0"
+  create_user = true
+
+  name = "terraform-cloud-infrastructure-system-user"
+
+  create_iam_access_key         = false
+  create_iam_user_login_profile = false
+}
+
+
 ## AWS - IAM - Groups
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-group-with-policies
@@ -140,6 +153,7 @@ module "iam_group" {
 
   group_users = [
     module.iam_user.iam_user_name,
+    module.system_user.iam_user_name,
   ]
 
   custom_group_policy_arns = [
