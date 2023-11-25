@@ -1,7 +1,7 @@
 module "zones" {
   source  = "terraform-aws-modules/route53/aws//modules/zones"
   version = "~> 2.0"
-  create  = true
+  create  = false
 
   zones = {
     "riddleapps.net" = {
@@ -17,7 +17,7 @@ module "zones" {
 module "records" {
   source  = "terraform-aws-modules/route53/aws//modules/records"
   version = "~> 2.0"
-  create  = true
+  create  = false
 
   zone_name = keys(module.zones.route53_zone_zone_id)[0]
 
