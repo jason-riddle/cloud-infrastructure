@@ -6,17 +6,19 @@ module "iam_github_oidc_provider" {
 }
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-github-oidc-role
-# module "iam_github_oidc_role" {
-#   source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
-#   version = "~> 5.0"
-#   create  = true
+module "iam_github_oidc_role" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-github-oidc-role"
+  version = "~> 5.0"
+  create  = true
 
-#   subjects = [
-#     # You can prepend with `repo:` but it is not required
-#     "repo:terraform-aws-modules/terraform-aws-iam:pull_request",
-#     "terraform-aws-modules/terraform-aws-iam:ref:refs/heads/master",
-#   ]
-# }
+  subjects = [
+    # You can prepend with `repo:` but it is not required
+    "jason-riddle/cloud-infrastructure"
+    # "repo:jason-riddle/cloud-infrastructure"
+    # "repo:jason-riddle/cloud-infrastructure:pull_request",
+    # "repo:jason-riddle/cloud-infrastructure:ref:refs/heads/main",
+  ]
+}
 
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
 module "iam_user" {
