@@ -130,10 +130,9 @@ module "system_user" {
 
   name = "terraform-cloud-infrastructure-system-user"
 
-  create_iam_access_key         = false
+  create_iam_access_key         = true
   create_iam_user_login_profile = false
 }
-
 
 ## AWS - IAM - Groups
 
