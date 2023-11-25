@@ -5,5 +5,5 @@ variable "tfc_aws_provider_auth" {
 
 variable "tfc_aws_run_role_arn" {
   type    = string
-  default = "11"
+  default = null
 }
