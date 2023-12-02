@@ -82,8 +82,18 @@ module "iam_terraform_cloud_oidc_role" {
     "arn:aws:iam::aws:policy/AdministratorAccess",
   ]
 
+  # TODO: There is a bug.
+  #       Since subjects contains wildcards, "StringLike" must be used for comparison.
+  #       However, due to how this module is written (https://github.com/terraform-aws-modules/terraform-aws-iam/blob/master/modules/iam-assumable-role-with-oidc/main.tf#L64-L82)
+  #       Both "oidc_fully_qualified_audiences" and "oidc_subjects_with_wildcards" make use of
+  #       "StringLike". However, in JSON this is an error because this key is repeated.
+  #       The correct solution is for audiences to use "StringEquals".
+  #
+  # REF: https://www.wolfe.id.au/2023/07/17/stop-using-iam-user-credentials-with-terraform-cloud/
+  # REF: https://aws.amazon.com/blogs/apn/simplify-and-secure-terraform-workflows-on-aws-with-dynamic-provider-credentials/
   oidc_fully_qualified_audiences = ["aws.workload.identity"]
-  oidc_fully_qualified_subjects  = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
+  # oidc_fully_qualified_subjects = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
+  oidc_subjects_with_wildcards = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
 }
 
 ### AWS - IAM - Terraform Cloud - OIDC - Outputs
