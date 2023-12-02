@@ -104,11 +104,11 @@ module "test_iam_terraform_cloud_oidc_role" {
   role_name = "test-terraform-iam-terraform-cloud-oidc-role"
 
   create_custom_role_trust_policy = true
-  custom_role_trust_policy        = data.aws_iam_policy_document.custom_trust_policy.json
+  custom_role_trust_policy        = data.aws_iam_policy_document.policy.json
   custom_role_policy_arns         = ["arn:aws:iam::aws:policy/AdministratorAccess"]
 }
 
-data "aws_iam_policy_document" "custom_trust_policy" {
+data "aws_iam_policy_document" "policy" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRoleWithWebIdentity"]
