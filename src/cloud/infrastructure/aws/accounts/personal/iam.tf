@@ -165,7 +165,8 @@ module "iam_user" {
   name = "jason-riddle"
 
   create_iam_access_key         = true
-  create_iam_user_login_profile = false
+  create_iam_user_login_profile = true
+  password_reset_required       = true
 
   policy_arns = [
     "arn:aws:iam::aws:policy/AdministratorAccess"
