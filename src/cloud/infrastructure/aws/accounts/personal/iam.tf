@@ -115,7 +115,7 @@ data "aws_iam_policy_document" "policy" {
 
     principals {
       type        = "Federated"
-      identifiers = ["arn:aws:iam::130659808697:oidc-provider/app.terraform.io"]
+      identifiers = ["arn:${local.partition}:iam::${local.aws_account_id}:oidc-provider/app.terraform.io"]
     }
 
     condition {
