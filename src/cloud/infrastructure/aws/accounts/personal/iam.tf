@@ -96,6 +96,42 @@ resource "aws_iam_openid_connect_provider" "app_terraform_io" {
 #   oidc_subjects_with_wildcards = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
 # }
 
+module "test_iam_terraform_cloud_oidc_role" {
+  source      = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  version     = "~> 5.0"
+  create_role = true
+
+  role_name = "test-terraform-iam-terraform-cloud-oidc-role"
+
+  create_custom_role_trust_policy = true
+  custom_role_trust_policy        = data.aws_iam_policy_document.custom_trust_policy.json
+  custom_role_policy_arns         = ["arn:aws:iam::aws:policy/AdministratorAccess"]
+}
+
+data "aws_iam_policy_document" "custom_trust_policy" {
+  statement {
+    effect  = "Allow"
+    actions = ["sts:AssumeRole"]
+
+    condition {
+      test     = "StringEquals"
+      variable = "sts:ExternalId"
+      values   = ["some-ext-id"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "aws:PrincipalOrgID"
+      values   = ["o-someorgid"]
+    }
+
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+  }
+}
+
 ### AWS - IAM - Terraform Cloud - OIDC - Outputs
 
 output "iam_terraform_cloud_oidc_role_arn" {
