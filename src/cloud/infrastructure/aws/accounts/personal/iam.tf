@@ -134,25 +134,25 @@ data "aws_iam_policy_document" "custom_trust_policy" {
 
 ### AWS - IAM - Terraform Cloud - OIDC - Outputs
 
-output "iam_terraform_cloud_oidc_role_arn" {
-  value     = module.iam_terraform_cloud_oidc_role.iam_role_arn
-  sensitive = true
-}
+# output "iam_terraform_cloud_oidc_role_arn" {
+#   value     = module.iam_terraform_cloud_oidc_role.iam_role_arn
+#   sensitive = true
+# }
 
-output "iam_terraform_cloud_oidc_role_name" {
-  value     = module.iam_terraform_cloud_oidc_role.iam_role_name
-  sensitive = true
-}
+# output "iam_terraform_cloud_oidc_role_name" {
+#   value     = module.iam_terraform_cloud_oidc_role.iam_role_name
+#   sensitive = true
+# }
 
-output "iam_terraform_cloud_oidc_role_path" {
-  value     = module.iam_terraform_cloud_oidc_role.iam_role_path
-  sensitive = true
-}
+# output "iam_terraform_cloud_oidc_role_path" {
+#   value     = module.iam_terraform_cloud_oidc_role.iam_role_path
+#   sensitive = true
+# }
 
-output "iam_terraform_cloud_oidc_role_unique_id" {
-  value     = module.iam_terraform_cloud_oidc_role.iam_role_unique_id
-  sensitive = true
-}
+# output "iam_terraform_cloud_oidc_role_unique_id" {
+#   value     = module.iam_terraform_cloud_oidc_role.iam_role_unique_id
+#   sensitive = true
+# }
 
 ## AWS - IAM - Users
 
