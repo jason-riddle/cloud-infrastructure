@@ -37,6 +37,16 @@ resource "tfe_variable" "tfc_aws_run_role_arn" {
   sensitive    = false
 }
 
+resource "tfe_variable" "tfc_aws_workload_identity_audience" {
+  count = local.create ? 1 : 0
+
+  key          = "TFC_AWS_WORKLOAD_IDENTITY_AUDIENCE"
+  value        = "aws.workload.identity"
+  category     = "env"
+  workspace_id = data.tfe_workspace.workspace[0].id
+  sensitive    = false
+}
+
 resource "tfe_variable" "tfc_aws_access_key_id" {
   count = local.create ? 1 : 0
 
