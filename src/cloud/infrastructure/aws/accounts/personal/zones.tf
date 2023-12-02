@@ -10,7 +10,7 @@ module "zones" {
   }
 
   tags = {
-    ManagedBy = "Terraform"
+    Domain = "riddleapps.net"
   }
 }
 
