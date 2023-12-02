@@ -116,7 +116,7 @@ module "iam_user" {
   version     = "~> 5.0"
   create_user = true
 
-  name = "jason.riddle"
+  name = "jason-riddle"
 
   create_iam_access_key         = false
   create_iam_user_login_profile = false
