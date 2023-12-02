@@ -1,3 +1,7 @@
+locals {
+  timestamp = formatdate("MMM-YYYY", "2018-01-02T23:12:01Z")
+}
+
 data "tailscale_devices" "devices" {}
 
 # Ephemeral
@@ -5,7 +9,7 @@ data "tailscale_devices" "devices" {}
 resource "tailscale_tailnet_key" "github_actions_ansible_role_tailscale_authkey" {
   count = 1
 
-  description = "NEW - Ansible Role Tailscale Authkey"
+  description = "${local.timestamp} Ansible Role Tailscale Authkey"
 
   reusable      = true
   ephemeral     = true
@@ -22,7 +26,7 @@ output "github_actions_ansible_role_tailscale_authkey" {
 resource "tailscale_tailnet_key" "github_actions_homelab_authkey" {
   count = 1
 
-  description = "NEW - Homelab Authkey"
+  description = "${local.timestamp} Homelab Authkey"
 
   reusable      = true
   ephemeral     = true
