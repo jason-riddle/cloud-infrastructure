@@ -96,12 +96,12 @@ resource "aws_iam_openid_connect_provider" "app_terraform_io" {
 #   oidc_subjects_with_wildcards = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
 # }
 
-module "test_iam_terraform_cloud_oidc_role" {
+module "iam_terraform_cloud_oidc_role" {
   source      = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
   version     = "~> 5.0"
   create_role = true
 
-  role_name = "test-terraform-iam-terraform-cloud-oidc-role"
+  role_name = "terraform-iam-terraform-cloud-oidc-role"
 
   create_custom_role_trust_policy = true
   custom_role_trust_policy        = data.aws_iam_policy_document.policy.json
@@ -134,25 +134,25 @@ data "aws_iam_policy_document" "policy" {
 
 ### AWS - IAM - Terraform Cloud - OIDC - Outputs
 
-# output "iam_terraform_cloud_oidc_role_arn" {
-#   value     = module.iam_terraform_cloud_oidc_role.iam_role_arn
-#   sensitive = true
-# }
+output "iam_terraform_cloud_oidc_role_arn" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_arn
+  sensitive = true
+}
 
-# output "iam_terraform_cloud_oidc_role_name" {
-#   value     = module.iam_terraform_cloud_oidc_role.iam_role_name
-#   sensitive = true
-# }
+output "iam_terraform_cloud_oidc_role_name" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_name
+  sensitive = true
+}
 
-# output "iam_terraform_cloud_oidc_role_path" {
-#   value     = module.iam_terraform_cloud_oidc_role.iam_role_path
-#   sensitive = true
-# }
+output "iam_terraform_cloud_oidc_role_path" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_path
+  sensitive = true
+}
 
-# output "iam_terraform_cloud_oidc_role_unique_id" {
-#   value     = module.iam_terraform_cloud_oidc_role.iam_role_unique_id
-#   sensitive = true
-# }
+output "iam_terraform_cloud_oidc_role_unique_id" {
+  value     = module.iam_terraform_cloud_oidc_role.iam_role_unique_id
+  sensitive = true
+}
 
 ## AWS - IAM - Users
 
