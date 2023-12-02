@@ -88,6 +88,16 @@ module "ts_jasonriddle11_gmail_com" {
   source = "./tailscale/tailnets/jasonriddle11_gmail_com"
 }
 
+output "ts_github_actions_ansible_role_tailscale_authkey" {
+  value     = module.ts_jasonriddle11_gmail_com.github_actions_ansible_role_tailscale_authkey
+  sensitive = true
+}
+
+output "ts_github_actions_homelab_authkey" {
+  value     = module.ts_jasonriddle11_gmail_com.github_actions_homelab_authkey
+  sensitive = true
+}
+
 ## Terraform Cloud
 
 module "tf_cloud" {
