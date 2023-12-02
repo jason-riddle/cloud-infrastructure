@@ -20,7 +20,7 @@ data "tfe_workspace" "workspace" {
 resource "tfe_variable" "tfc_aws_provider_auth" {
   count = local.create ? 1 : 0
 
-  key          = "DEBUG_TFC_AWS_PROVIDER_AUTH"
+  key          = "TFC_AWS_PROVIDER_AUTH"
   value        = var.tfc_aws_provider_auth
   category     = "env"
   workspace_id = data.tfe_workspace.workspace[0].id
@@ -30,7 +30,7 @@ resource "tfe_variable" "tfc_aws_provider_auth" {
 resource "tfe_variable" "tfc_aws_run_role_arn" {
   count = local.create ? 1 : 0
 
-  key          = "DEBUG_TFC_AWS_RUN_ROLE_ARN"
+  key          = "TFC_AWS_RUN_ROLE_ARN"
   value        = var.tfc_aws_run_role_arn
   category     = "env"
   workspace_id = data.tfe_workspace.workspace[0].id
