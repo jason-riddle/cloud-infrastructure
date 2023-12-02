@@ -4,6 +4,18 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
+### AWS - IAM User
+
+output "iam_user_access_key_id" {
+  value     = module.aws.iam_user_access_key_id
+  sensitive = true
+}
+
+output "iam_user_access_key_secret" {
+  value     = module.aws.iam_user_access_key_secret
+  sensitive = true
+}
+
 ### AWS - IAM System User
 
 output "iam_system_user_access_key_id" {
