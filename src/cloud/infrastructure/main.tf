@@ -69,5 +69,6 @@ module "ts_jasonriddle11_gmail_com" {
 module "tf_cloud" {
   source = "./terraform-cloud/workspaces/default"
 
-  tfc_aws_run_role_arn = module.aws.iam_terraform_cloud_oidc_role_arn
+  tfc_aws_provider_auth = true
+  tfc_aws_run_role_arn  = module.aws.iam_terraform_cloud_oidc_role_arn
 }
