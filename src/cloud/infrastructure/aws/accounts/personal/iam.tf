@@ -162,7 +162,7 @@ module "iam_cli_user" {
   version     = "~> 5.0"
   create_user = true
 
-  name = "jason-riddle-cli-user"
+  name = "jason.riddle@awscli"
 
   create_iam_access_key         = true
   create_iam_user_login_profile = false
@@ -189,7 +189,7 @@ module "iam_console_user" {
   version     = "~> 5.0"
   create_user = true
 
-  name = "jason-riddle-console-user"
+  name = "jason.riddle@console"
 
   create_iam_access_key         = false
   create_iam_user_login_profile = true
