@@ -57,7 +57,8 @@ terraform {
 provider "aws" {
   default_tags {
     tags = {
-      Repo = "https://github.com/jason-riddle/cloud-infrastructure"
+      ManagedBy = "Terraform"
+      Repo      = "https://github.com/jason-riddle/cloud-infrastructure"
     }
   }
 }
