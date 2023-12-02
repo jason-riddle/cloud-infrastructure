@@ -4,6 +4,18 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
+### AWS - IAM System User
+
+# output "iam_system_user_access_key_id" {
+#   value     = module.aws.iam_system_user_access_key_id
+#   sensitive = true
+# }
+
+# output "iam_system_user_access_key_secret" {
+#   value     = module.aws.iam_system_user_access_key_secret
+#   sensitive = true
+# }
+
 ### AWS - IAM - GitHub - OIDC - Outputs
 
 output "iam_github_oidc_role_arn" {
