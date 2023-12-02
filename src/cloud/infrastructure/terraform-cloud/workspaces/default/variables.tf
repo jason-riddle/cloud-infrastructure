@@ -1,6 +1,6 @@
 variable "tfc_aws_provider_auth" {
   type    = bool
-  default = true
+  default = false
 }
 
 variable "tfc_aws_run_role_arn" {
