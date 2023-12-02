@@ -193,7 +193,7 @@ module "iam_console_user" {
 
   create_iam_access_key         = false
   create_iam_user_login_profile = true
-  password_reset_required       = true
+  password_reset_required       = false
 
   policy_arns = [
     "arn:aws:iam::aws:policy/AdministratorAccess"
@@ -210,6 +210,7 @@ module "iam_system_user" {
 
   create_iam_access_key         = true
   create_iam_user_login_profile = false
+  password_reset_required       = false
 
   policy_arns = [
     "arn:aws:iam::aws:policy/AdministratorAccess"
