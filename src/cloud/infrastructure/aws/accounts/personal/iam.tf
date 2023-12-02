@@ -111,23 +111,23 @@ module "test_iam_terraform_cloud_oidc_role" {
 data "aws_iam_policy_document" "custom_trust_policy" {
   statement {
     effect  = "Allow"
-    actions = ["sts:AssumeRole"]
+    actions = ["sts:AssumeRoleWithWebIdentity"]
 
     principals {
-      type        = "AWS"
-      identifiers = ["*"]
+      type        = "Federated"
+      identifiers = ["arn:aws:iam::130659808697:oidc-provider/app.terraform.io"]
     }
 
     condition {
       test     = "StringEquals"
-      variable = "sts:ExternalId"
-      values   = ["some-ext-id"]
+      variable = "app.terraform.io:aud"
+      values   = ["aws.workload.identity"]
     }
 
     condition {
-      test     = "StringEquals"
-      variable = "aws:PrincipalOrgID"
-      values   = ["o-someorgid"]
+      test     = "StringLike"
+      variable = "app.terraform.io:sub"
+      values   = ["organization:org-jasonriddle:project:*:workspace:*:run_phase:*"]
     }
   }
 }
