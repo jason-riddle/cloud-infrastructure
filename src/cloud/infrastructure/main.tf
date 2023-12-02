@@ -4,15 +4,15 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
-### AWS - IAM User
+### AWS - IAM CLI User
 
-output "iam_user_access_key_id" {
-  value     = module.aws.iam_user_access_key_id
+output "iam_cli_user_access_key_id" {
+  value     = module.aws.iam_cli_user_access_key_id
   sensitive = true
 }
 
-output "iam_user_access_key_secret" {
-  value     = module.aws.iam_user_access_key_secret
+output "iam_cli_user_access_key_secret" {
+  value     = module.aws.iam_cli_user_access_key_secret
   sensitive = true
 }
 
