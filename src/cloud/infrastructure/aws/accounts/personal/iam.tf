@@ -113,6 +113,11 @@ data "aws_iam_policy_document" "custom_trust_policy" {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
 
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
     condition {
       test     = "StringEquals"
       variable = "sts:ExternalId"
@@ -123,11 +128,6 @@ data "aws_iam_policy_document" "custom_trust_policy" {
       test     = "StringEquals"
       variable = "aws:PrincipalOrgID"
       values   = ["o-someorgid"]
-    }
-
-    principals {
-      type        = "AWS"
-      identifiers = ["*"]
     }
   }
 }
