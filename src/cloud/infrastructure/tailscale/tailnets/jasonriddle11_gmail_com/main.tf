@@ -9,7 +9,7 @@ data "tailscale_devices" "devices" {}
 resource "tailscale_tailnet_key" "github_actions_ansible_role_tailscale_authkey" {
   count = 1
 
-  description = "${local.timestamp} [GHA] Ansible Role Tailscale Authkey"
+  description = "${local.timestamp} -GHA- Ansible Role Tailscale Authkey"
 
   reusable      = true
   ephemeral     = true
@@ -26,7 +26,7 @@ output "github_actions_ansible_role_tailscale_authkey" {
 resource "tailscale_tailnet_key" "github_actions_homelab_authkey" {
   count = 1
 
-  description = "${local.timestamp} [GHA] Homelab Authkey"
+  description = "${local.timestamp} -GHA- Homelab Authkey"
 
   reusable      = true
   ephemeral     = true
