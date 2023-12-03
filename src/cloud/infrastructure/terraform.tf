@@ -45,9 +45,9 @@ terraform {
     # DOCS: https://registry.terraform.io/providers/hashicorp/tfe/latest/docs
     # ENVS: TFE_TOKEN
     # CRED: https://app.terraform.io/app/settings/tokens
-    # NAME: terraform-cloud-infrastructure
+    # NAME: terraform-cloud-infrastructure-system-user
     # PERM: ''
-    # PREF: Kshzsh
+    # PREF: ''
     tfe = {
       source = "hashicorp/tfe"
     }

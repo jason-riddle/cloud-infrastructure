@@ -28,8 +28,12 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.4
+          # DOCS: ''
+          # ENVS: TF_API_TOKEN
+          # CRED: https://github.com/jason-riddle/cloud-infrastructure/settings/secrets/actions
           # CRED: https://app.terraform.io/app/settings/tokens
           # NAME: terraform-cloud-infrastructure-system-user
+          # PERM: ''
           # PREF: ''
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
