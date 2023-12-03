@@ -29,8 +29,8 @@ jobs:
         with:
           terraform_version: 1.6.4
           # CRED: https://app.terraform.io/app/settings/tokens
-          # NAME: terraform-cloud-infrastructure
-          # PREF: Kshzsh
+          # NAME: terraform-cloud-infrastructure-system-user
+          # PREF: RHlfe0
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Format Check
