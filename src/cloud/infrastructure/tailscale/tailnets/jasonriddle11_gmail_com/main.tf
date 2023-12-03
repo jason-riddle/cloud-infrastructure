@@ -9,7 +9,7 @@ data "tailscale_devices" "devices" {}
 resource "tailscale_tailnet_key" "github_actions_ansible_role_tailscale_authkey" {
   count = 1
 
-  description = "${local.timestamp} GHA Ansible Role Tailscale Authkey"
+  description = "${local.timestamp} [GHA] Ansible Role Tailscale Authkey"
 
   reusable      = true
   ephemeral     = true
@@ -26,7 +26,7 @@ output "github_actions_ansible_role_tailscale_authkey" {
 resource "tailscale_tailnet_key" "github_actions_homelab_authkey" {
   count = 1
 
-  description = "${local.timestamp} GHA Homelab Authkey"
+  description = "${local.timestamp} [GHA] Homelab Authkey"
 
   reusable      = true
   ephemeral     = true
@@ -42,19 +42,19 @@ output "github_actions_homelab_authkey" {
 
 ## Homelab
 
-resource "tailscale_tailnet_key" "prod_homelab_authkey" {
+resource "tailscale_tailnet_key" "homelab_authkey" {
   count = 1
 
-  description = "${local.timestamp} PROD Homelab Authkey"
+  description = "${local.timestamp} Homelab Authkey"
 
   reusable      = true
   ephemeral     = false
   preauthorized = true
   expiry        = 7776000 # 90 Days
-  tags          = ["tag:homelab", "tag:prod"]
+  tags          = ["tag:homelab"]
 }
 
-output "prod_homelab_authkey" {
-  value     = tailscale_tailnet_key.prod_homelab_authkey[0].key
+output "homelab_authkey" {
+  value     = tailscale_tailnet_key.homelab_authkey[0].key
   sensitive = true
 }

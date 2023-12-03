@@ -98,8 +98,8 @@ output "ts_github_actions_homelab_authkey" {
   sensitive = true
 }
 
-output "ts_prod_homelab_authkey" {
-  value     = module.ts_jasonriddle11_gmail_com.prod_homelab_authkey
+output "ts_homelab_authkey" {
+  value     = module.ts_jasonriddle11_gmail_com.homelab_authkey
   sensitive = true
 }
 
