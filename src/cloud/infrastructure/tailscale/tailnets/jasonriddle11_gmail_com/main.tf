@@ -1,5 +1,5 @@
 locals {
-  timestamp = formatdate("MMM-YYYY", "2018-01-02T23:12:01Z")
+  timestamp = formatdate("MMM-YYYY", timestamp())
 }
 
 data "tailscale_devices" "devices" {}
