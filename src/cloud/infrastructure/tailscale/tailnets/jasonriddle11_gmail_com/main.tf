@@ -42,7 +42,7 @@ output "github_actions_homelab_authkey" {
 
 ## Homelab
 
-resource "tailscale_tailnet_key" "homelab_authkey" {
+resource "tailscale_tailnet_key" "prod_homelab_authkey" {
   count = 1
 
   description = "${local.timestamp} PROD Homelab Authkey"
@@ -54,7 +54,7 @@ resource "tailscale_tailnet_key" "homelab_authkey" {
   tags          = ["tag:homelab", "tag:prod"]
 }
 
-output "homelab_authkey" {
-  value     = tailscale_tailnet_key.homelab_authkey[0].key
+output "prod_homelab_authkey" {
+  value     = tailscale_tailnet_key.prod_homelab_authkey[0].key
   sensitive = true
 }
