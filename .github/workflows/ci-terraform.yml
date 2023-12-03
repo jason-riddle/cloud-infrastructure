@@ -34,7 +34,6 @@ jobs:
           # CRED: https://app.terraform.io/app/settings/tokens
           # NAME: terraform-cloud-infrastructure-system-user
           # PERM: ''
-          # PREF: ''
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Format Check

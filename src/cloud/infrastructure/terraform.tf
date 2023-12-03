@@ -17,7 +17,6 @@ terraform {
     # CRED: https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users/details/terraform-cloud-infrastructure?section=permissions
     # NAME: terraform-cloud-infrastructure
     # PERM: AdministratorAccess
-    # PREF: AKIAR42
     aws = {
       source = "hashicorp/aws"
     }
@@ -27,7 +26,6 @@ terraform {
     # CRED: https://github.com/settings/tokens
     # NAME: terraform-cloud-infrastructure
     # PERM: ''
-    # PREF: ghp_pwq
     github = {
       source = "integrations/github"
     }
@@ -37,7 +35,6 @@ terraform {
     # CRED: https://login.tailscale.com/admin/settings/oauth
     # NAME: terraform-cloud-infrastructure
     # PERM: scopes:all
-    # PREF: ktxGCS
     tailscale = {
       source = "tailscale/tailscale"
     }
@@ -47,7 +44,6 @@ terraform {
     # CRED: https://app.terraform.io/app/settings/tokens
     # NAME: terraform-cloud-infrastructure-system-user
     # PERM: ''
-    # PREF: ''
     tfe = {
       source = "hashicorp/tfe"
     }
