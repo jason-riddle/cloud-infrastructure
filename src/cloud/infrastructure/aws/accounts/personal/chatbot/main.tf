@@ -6,6 +6,50 @@ resource "aws_lex_intent" "lex_intent" {
   fulfillment_activity {
     type = "ReturnIntent"
   }
+
+  confirmation_prompt {
+    max_attempts = 2
+
+    message {
+      content      = "Okay, your {FlowerType} will be ready for pickup tomorrow. Does this sound okay?"
+      content_type = "PlainText"
+    }
+  }
+
+  rejection_statement {
+    message {
+      content      = "Okay, I will not place your order."
+      content_type = "PlainText"
+    }
+  }
+
+  sample_utterances = [
+    "I would like to order some flowers",
+    "I would like to pick up flowers",
+  ]
+
+  slot {
+    name        = "FlowerType"
+    description = "The type of flowers to pick up"
+    priority    = 1
+
+    sample_utterances = [
+      "I would like to order {FlowerType}",
+    ]
+
+    slot_type         = "LexSlotType"
+    slot_type_version = aws_lex_slot_type.lex_slot_type.version
+    slot_constraint   = "Required"
+
+    value_elicitation_prompt {
+      max_attempts = 2
+
+      message {
+        content      = "What type of flowers would you like to order?"
+        content_type = "PlainText"
+      }
+    }
+  }
 }
 
 output "lex_intent_arn" {
@@ -22,11 +66,11 @@ resource "aws_lex_bot" "lex_bot" {
   create_version = false
 
   child_directed   = false
-  process_behavior = "SAVE"
+  process_behavior = "BUILD"
 
   abort_statement {
     message {
-      content      = "Sorry, I need to exit my program."
+      content      = "Sorry, I need to exit."
       content_type = "PlainText"
     }
   }
