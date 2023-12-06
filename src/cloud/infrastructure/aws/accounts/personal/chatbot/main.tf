@@ -65,21 +65,23 @@ resource "aws_lex_bot" "lex_bot" {
   description    = "ChatBotDescription"
   create_version = false
 
+  locale = "en-US"
+
   child_directed   = false
   process_behavior = "BUILD"
-
-  abort_statement {
-    message {
-      content      = "Sorry, I need to exit."
-      content_type = "PlainText"
-    }
-  }
 
   clarification_prompt {
     max_attempts = 2
 
     message {
       content      = "I didn't understand, can you clarify?"
+      content_type = "PlainText"
+    }
+  }
+
+  abort_statement {
+    message {
+      content      = "Sorry, I need to exit."
       content_type = "PlainText"
     }
   }
