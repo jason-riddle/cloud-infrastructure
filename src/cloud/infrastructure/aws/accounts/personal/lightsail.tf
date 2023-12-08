@@ -11,5 +11,5 @@
 
 # resource "aws_lightsail_key_pair" "key_pair" {
 #   name       = "jason-riddle"
-#   public_key = file("~/.ssh/id_rsa.pub")
+#   public_key = file("~/.ssh/id_ed25519.pub")
 # }
