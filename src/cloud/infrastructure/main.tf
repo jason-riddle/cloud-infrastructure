@@ -4,22 +4,6 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
-# output "aws_chatbot_lex_intent_arn" {
-#   value = module.aws_chatbot.lex_intent_arn
-# }
-
-# output "aws_chatbot_lex_intent_version" {
-#   value = module.aws_chatbot.lex_intent_version
-# }
-
-# output "aws_chatbot_lex_bot_id" {
-#   value = module.aws_chatbot.lex_bot_id
-# }
-
-# output "aws_chatbot_lex_bot_version" {
-#   value = module.aws_chatbot.lex_bot_version
-# }
-
 ### AWS - IAM CLI User
 
 output "iam_cli_user_access_key_id" {
