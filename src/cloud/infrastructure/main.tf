@@ -4,10 +4,6 @@ module "aws" {
   source = "./aws/accounts/personal"
 }
 
-module "aws_chatbot" {
-  source = "./aws/accounts/personal/chatbot"
-}
-
 # output "aws_chatbot_lex_intent_arn" {
 #   value = module.aws_chatbot.lex_intent_arn
 # }
