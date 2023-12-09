@@ -1,18 +1,18 @@
-module "zones" {
-  source  = "terraform-aws-modules/route53/aws//modules/zones"
-  version = "~> 2.0"
-  create  = false
+# module "zones" {
+#   source  = "terraform-aws-modules/route53/aws//modules/zones"
+#   version = "~> 2.0"
+#   create  = false
 
-  zones = {
-    "riddleapps.net" = {
-      comment = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    }
-  }
+#   zones = {
+#     "riddleapps.net" = {
+#       comment = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+#     }
+#   }
 
-  tags = {
-    Domain = "riddleapps.net"
-  }
-}
+#   tags = {
+#     Domain = "riddleapps.net"
+#   }
+# }
 
 # module "records" {
 #   source  = "terraform-aws-modules/route53/aws//modules/records"
