@@ -24,7 +24,7 @@ module "iam_github_oidc_role" {
   ]
 
   policies = {
-    AdministratorAccess = "arn:aws:iam::aws:policy/AdministratorAccess"
+    admin = "arn:aws:iam::aws:policy/AdministratorAccess"
   }
 }
 
