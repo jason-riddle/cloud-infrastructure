@@ -1,11 +1,11 @@
 ## IAM
 
 # https://github.com/cloudposse/terraform-aws-iam-role/blob/0.19.0/examples/complete/main.tf
-module "terraform_cloud_iam_oidc_role" {
-  source  = "cloudposse/iam-role/aws"
-  version = "~> 0.0"
-  enabled = false
-}
+# module "terraform_cloud_iam_oidc_role" {
+#   source  = "cloudposse/iam-role/aws"
+#   version = "~> 0.0"
+#   enabled = false
+# }
 
 # https://github.com/cloudposse/terraform-aws-iam-user/blob/main/examples/complete/main.tf
 # module "jason_riddle" {
