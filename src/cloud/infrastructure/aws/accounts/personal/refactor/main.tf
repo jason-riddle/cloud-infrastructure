@@ -20,12 +20,12 @@
 # }
 
 # https://github.com/cloudposse/terraform-aws-iam-system-user/blob/main/examples/complete/main.tf
-module "terraform_cloud_infrastructure_system_user" {
+module "n8n_cloud_infrastructure_system_user" {
   source  = "cloudposse/iam-system-user/aws"
   version = "~> 1.0"
   enabled = false
 
-  name = "terraform-cloud-infrastructure-system-user"
+  name = "n8n-cloud-infrastructure-system-user"
 
   policy_arns_map = {
     admin = "arn:aws:iam::aws:policy/AdministratorAccess"
