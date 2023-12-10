@@ -13,7 +13,7 @@ module "iam_github_oidc_role" {
   version = "~> 5.0"
   create  = true
 
-  name = "terraform-iam-github-oidc-role"
+  name = "terraform-cloud-infrastructure-gh-actions-iam-oidc-role"
 
   subjects = [
     # You can prepend with `repo:` but it is not required
