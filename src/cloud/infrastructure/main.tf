@@ -30,25 +30,25 @@ output "iam_system_user_access_key_secret" {
 
 ### AWS - IAM - GitHub - OIDC - Outputs
 
-output "iam_github_oidc_role_arn" {
-  value     = module.aws.iam_github_oidc_role_arn
-  sensitive = true
-}
+# output "iam_github_oidc_role_arn" {
+#   value     = module.aws.iam_github_oidc_role_arn
+#   sensitive = true
+# }
 
-output "iam_github_oidc_role_name" {
-  value     = module.aws.iam_github_oidc_role_name
-  sensitive = true
-}
+# output "iam_github_oidc_role_name" {
+#   value     = module.aws.iam_github_oidc_role_name
+#   sensitive = true
+# }
 
-output "iam_github_oidc_role_path" {
-  value     = module.aws.iam_github_oidc_role_path
-  sensitive = true
-}
+# output "iam_github_oidc_role_path" {
+#   value     = module.aws.iam_github_oidc_role_path
+#   sensitive = true
+# }
 
-output "iam_github_oidc_role_unique_id" {
-  value     = module.aws.iam_github_oidc_role_unique_id
-  sensitive = true
-}
+# output "iam_github_oidc_role_unique_id" {
+#   value     = module.aws.iam_github_oidc_role_unique_id
+#   sensitive = true
+# }
 
 ### AWS - IAM - Terraform Cloud - OIDC - Outputs
 
