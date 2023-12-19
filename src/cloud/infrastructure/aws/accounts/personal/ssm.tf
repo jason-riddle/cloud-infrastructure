@@ -1,5 +1,5 @@
 data "aws_iam_role" "ec2_run_command_role" {
-  name = "AmazonEC2RunCommandRoleForManagedInstances"
+  name = "service-role/AmazonEC2RunCommandRoleForManagedInstances"
 }
 
 resource "aws_ssm_activation" "activation" {
