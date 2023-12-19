@@ -1,5 +1,24 @@
-data "aws_iam_role" "ec2_run_command_role" {
-  name = "service-role/AmazonEC2RunCommandRoleForManagedInstances"
+data "aws_iam_policy_document" "ssm_assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["ssm.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+resource "aws_iam_role" "ssm" {
+  name               = "ssm"
+  assume_role_policy = data.aws_iam_policy_document.ssm_assume_role.json
+}
+
+resource "aws_iam_role_policy_attachment" "attachment" {
+  role       = aws_iam_role.ssm.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
 
 resource "aws_ssm_activation" "activation" {
@@ -10,7 +29,7 @@ resource "aws_ssm_activation" "activation" {
 
   registration_limit = "1000"
 
-  iam_role = data.aws_iam_role.ec2_run_command_role.id
+  iam_role = aws_iam_role.ssm.id
 }
 
 output "ssm_activation_id" {
