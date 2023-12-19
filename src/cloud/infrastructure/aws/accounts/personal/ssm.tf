@@ -22,6 +22,8 @@ resource "aws_iam_role_policy_attachment" "ssm_managed_instance_core_policy_atta
 }
 
 resource "aws_ssm_activation" "activation" {
+  depends_on = [aws_iam_role_policy_attachment.ssm_managed_instance_core_policy_attachment]
+
   name        = "test_ssm_activation"
   description = "Test"
 
