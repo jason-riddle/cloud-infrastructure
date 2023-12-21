@@ -84,15 +84,15 @@ output "iam_terraform_cloud_oidc_role_unique_id" {
 
 ### AWS - SSM
 
-output "ssm_activation_id" {
-  value     = module.aws.ssm_activation_id
-  sensitive = true
-}
+# output "ssm_activation_id" {
+#   value     = module.aws.ssm_activation_id
+#   sensitive = true
+# }
 
-output "ssm_activation_code" {
-  value     = module.aws.ssm_activation_code
-  sensitive = true
-}
+# output "ssm_activation_code" {
+#   value     = module.aws.ssm_activation_code
+#   sensitive = true
+# }
 
 ## GitHub
 
