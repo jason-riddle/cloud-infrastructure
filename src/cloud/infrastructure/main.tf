@@ -6,15 +6,15 @@ module "aws" {
 
 ### AWS - IAM CLI User
 
-output "iam_cli_user_access_key_id" {
-  value     = module.aws.iam_cli_user_access_key_id
-  sensitive = true
-}
+# output "iam_cli_user_access_key_id" {
+#   value     = module.aws.iam_cli_user_access_key_id
+#   sensitive = true
+# }
 
-output "iam_cli_user_access_key_secret" {
-  value     = module.aws.iam_cli_user_access_key_secret
-  sensitive = true
-}
+# output "iam_cli_user_access_key_secret" {
+#   value     = module.aws.iam_cli_user_access_key_secret
+#   sensitive = true
+# }
 
 ### AWS - IAM System Users
 
