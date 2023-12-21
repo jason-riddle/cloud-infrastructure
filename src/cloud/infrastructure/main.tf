@@ -28,15 +28,15 @@ output "iam_system_user_access_key_secret" {
   sensitive = true
 }
 
-output "n8n_cloud_system_user_access_key_id" {
-  value     = module.aws.n8n_cloud_system_user_access_key_id
-  sensitive = true
-}
+# output "n8n_cloud_system_user_access_key_id" {
+#   value     = module.aws.n8n_cloud_system_user_access_key_id
+#   sensitive = true
+# }
 
-output "n8n_cloud_system_user_secret_access_key" {
-  value     = module.aws.n8n_cloud_system_user_secret_access_key
-  sensitive = true
-}
+# output "n8n_cloud_system_user_secret_access_key" {
+#   value     = module.aws.n8n_cloud_system_user_secret_access_key
+#   sensitive = true
+# }
 
 ### AWS - IAM - GitHub - OIDC - Outputs
 

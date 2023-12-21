@@ -30,26 +30,26 @@ output "iam_system_user_access_key_secret" {
 ## N8n
 
 # https://github.com/cloudposse/terraform-aws-iam-system-user/blob/main/examples/complete/main.tf
-module "n8n_cloud_system_user" {
-  source  = "cloudposse/iam-system-user/aws"
-  version = "~> 1.0"
-  enabled = true
+# module "n8n_cloud_system_user" {
+#   source  = "cloudposse/iam-system-user/aws"
+#   version = "~> 1.0"
+#   enabled = true
 
-  name = "n8n-cloud-system-user"
+#   name = "n8n-cloud-system-user"
 
-  ssm_enabled = false
+#   ssm_enabled = false
 
-  create_iam_access_key = true
+#   create_iam_access_key = true
 
-  policy_arns_map = {
-    admin = "arn:aws:iam::aws:policy/AdministratorAccess"
-  }
-}
+#   policy_arns_map = {
+#     admin = "arn:aws:iam::aws:policy/AdministratorAccess"
+#   }
+# }
 
-output "n8n_cloud_system_user_access_key_id" {
-  value     = module.n8n_cloud_system_user.access_key_id
-  sensitive = true
-}
+# output "n8n_cloud_system_user_access_key_id" {
+#   value     = module.n8n_cloud_system_user.access_key_id
+#   sensitive = true
+# }
 
 output "n8n_cloud_system_user_secret_access_key" {
   value     = module.n8n_cloud_system_user.secret_access_key
