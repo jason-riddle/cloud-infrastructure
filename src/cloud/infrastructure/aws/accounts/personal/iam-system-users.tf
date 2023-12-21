@@ -51,7 +51,7 @@
 #   sensitive = true
 # }
 
-output "n8n_cloud_system_user_secret_access_key" {
-  value     = module.n8n_cloud_system_user.secret_access_key
-  sensitive = true
-}
+# output "n8n_cloud_system_user_secret_access_key" {
+#   value     = module.n8n_cloud_system_user.secret_access_key
+#   sensitive = true
+# }
