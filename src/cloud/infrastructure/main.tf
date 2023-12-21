@@ -133,6 +133,6 @@ module "tf_cloud" {
   tfc_aws_provider_auth = true
   tfc_aws_run_role_arn  = module.aws.iam_terraform_cloud_oidc_role_arn
 
-  tfc_aws_access_key_id     = module.aws.iam_system_user_access_key_id
-  tfc_aws_secret_access_key = module.aws.iam_system_user_access_key_secret
+  # tfc_aws_access_key_id     = module.aws.iam_system_user_access_key_id
+  # tfc_aws_secret_access_key = module.aws.iam_system_user_access_key_secret
 }

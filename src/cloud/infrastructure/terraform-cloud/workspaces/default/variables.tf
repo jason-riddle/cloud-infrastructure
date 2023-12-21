@@ -10,14 +10,14 @@ variable "tfc_aws_run_role_arn" {
   default   = null
 }
 
-variable "tfc_aws_access_key_id" {
-  type      = string
-  sensitive = true
-  default   = null
-}
+# variable "tfc_aws_access_key_id" {
+#   type      = string
+#   sensitive = true
+#   default   = null
+# }
 
-variable "tfc_aws_secret_access_key" {
-  type      = string
-  sensitive = true
-  default   = null
-}
+# variable "tfc_aws_secret_access_key" {
+#   type      = string
+#   sensitive = true
+#   default   = null
+# }

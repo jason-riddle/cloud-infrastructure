@@ -47,22 +47,22 @@ resource "tfe_variable" "tfc_aws_workload_identity_audience" {
   sensitive    = false
 }
 
-resource "tfe_variable" "tfc_aws_access_key_id" {
-  count = local.create ? 1 : 0
+# resource "tfe_variable" "tfc_aws_access_key_id" {
+#   count = local.create ? 1 : 0
 
-  key          = "DEBUG_AWS_ACCESS_KEY_ID"
-  value        = var.tfc_aws_access_key_id
-  category     = "env"
-  workspace_id = data.tfe_workspace.workspace[0].id
-  sensitive    = true
-}
+#   key          = "DEBUG_AWS_ACCESS_KEY_ID"
+#   value        = var.tfc_aws_access_key_id
+#   category     = "env"
+#   workspace_id = data.tfe_workspace.workspace[0].id
+#   sensitive    = true
+# }
 
-resource "tfe_variable" "tfc_aws_secret_access_key" {
-  count = local.create ? 1 : 0
+# resource "tfe_variable" "tfc_aws_secret_access_key" {
+#   count = local.create ? 1 : 0
 
-  key          = "DEBUG_AWS_SECRET_ACCESS_KEY"
-  value        = var.tfc_aws_secret_access_key
-  category     = "env"
-  workspace_id = data.tfe_workspace.workspace[0].id
-  sensitive    = true
-}
+#   key          = "DEBUG_AWS_SECRET_ACCESS_KEY"
+#   value        = var.tfc_aws_secret_access_key
+#   category     = "env"
+#   workspace_id = data.tfe_workspace.workspace[0].id
+#   sensitive    = true
+# }
