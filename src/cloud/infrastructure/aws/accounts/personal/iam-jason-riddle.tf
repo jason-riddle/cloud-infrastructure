@@ -1,10 +1,10 @@
 # https://github.com/terraform-aws-modules/terraform-aws-iam/tree/master/modules/iam-user
-module "jason_riddle_awscli" {
+module "jason_at_jasons_mac_mini" {
   source      = "terraform-aws-modules/iam/aws//modules/iam-user"
   version     = "~> 5.0"
   create_user = true
 
-  name = "jason.riddle@awscli"
+  name = "jason@Jasons-Mac-Mini"
 
   create_iam_access_key         = true
   create_iam_user_login_profile = false
@@ -15,13 +15,13 @@ module "jason_riddle_awscli" {
   ]
 }
 
-output "jason_riddle_awscli_access_key_id" {
-  value     = module.jason_riddle_awscli.iam_access_key_id
+output "jason_at_jasons_mac_mini_access_key_id" {
+  value     = module.jason_at_jasons_mac_mini.iam_access_key_id
   sensitive = true
 }
 
-output "jason_riddle_awscli_access_key_secret" {
-  value     = module.jason_riddle_awscli.iam_access_key_secret
+output "jason_at_jasons_mac_mini_access_key_secret" {
+  value     = module.jason_at_jasons_mac_mini.iam_access_key_secret
   sensitive = true
 }
 

@@ -6,13 +6,13 @@ module "aws" {
 
 ### AWS - IAM CLI User
 
-output "jason_riddle_awscli_access_key_id" {
-  value     = module.aws.jason_riddle_awscli_access_key_id
+output "jason_at_jasons_mac_mini_access_key_id" {
+  value     = module.aws.jason_at_jasons_mac_mini_access_key_id
   sensitive = true
 }
 
-output "jason_riddle_awscli_access_key_secret" {
-  value     = module.aws.jason_riddle_awscli_access_key_secret
+output "jason_at_jasons_mac_mini_access_key_secret" {
+  value     = module.aws.jason_at_jasons_mac_mini_access_key_secret
   sensitive = true
 }
 
