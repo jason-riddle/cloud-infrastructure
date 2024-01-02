@@ -18,15 +18,15 @@ output "jason_at_jasons_mac_mini_access_key_secret" {
 
 ### AWS - HASS
 
-# output "iam_hass_system_user_access_key_id" {
-#   value     = module.aws.iam_hass_system_user_access_key_id
-#   sensitive = true
-# }
+output "iam_hass_system_user_access_key_id" {
+  value     = module.aws.iam_hass_system_user_access_key_id
+  sensitive = true
+}
 
-# output "iam_hass_system_user_access_key_secret" {
-#   value     = module.aws.iam_hass_system_user_access_key_secret
-#   sensitive = true
-# }
+output "iam_hass_system_user_access_key_secret" {
+  value     = module.aws.iam_hass_system_user_access_key_secret
+  sensitive = true
+}
 
 ### AWS - IAM System Users
 
