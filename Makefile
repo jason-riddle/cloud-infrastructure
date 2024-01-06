@@ -23,11 +23,19 @@ fmt:
 validate: init
 	terraform -chdir=$(TF_DIR) validate
 
-cf-gen:
+backup: backup-cf-zone-records
+backup-cf-zone-records:
 	pushd $(TF_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_record" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee cf-gen.tf.backup ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee cf-zone-records.tf.backup ; \
+	popd
+
+backup-cf-page-rules:
+	pushd $(TF_DIR) ; \
+	cf-terraforming generate \
+		--resource-type "cloudflare_page_rule" \
+		--zone $$CLOUDFLARE_ZONE_ID | tee cf-page-rules.tf.backup ; \
 	popd
 
 ## CI

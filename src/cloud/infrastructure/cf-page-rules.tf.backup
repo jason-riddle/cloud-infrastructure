@@ -1,0 +1,32 @@
+resource "cloudflare_page_rule" "terraform_managed_resource_ed67d02425de2cb3709f6989455ebf55" {
+  priority = 3
+  status   = "disabled"
+  target   = "*jasonriddle.com/wp-admin*"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  actions {
+    cache_level = "bypass"
+  }
+}
+
+resource "cloudflare_page_rule" "terraform_managed_resource_bfc67d1d12b70661381d9b55de86e6b9" {
+  priority = 2
+  status   = "disabled"
+  target   = "*jasonriddle.com/*preview=true*"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  actions {
+    cache_level = "bypass"
+  }
+}
+
+resource "cloudflare_page_rule" "terraform_managed_resource_9e453a8d5bf444c6fbf5a0ffc1b42581" {
+  priority = 1
+  status   = "disabled"
+  target   = "*jasonriddle.com/*"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  actions {
+    browser_cache_ttl = 120
+    cache_level       = "cache_everything"
+    edge_cache_ttl    = 172800
+  }
+}
+
