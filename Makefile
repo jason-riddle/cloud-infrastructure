@@ -23,7 +23,7 @@ fmt:
 validate: init
 	terraform -chdir=$(TF_DIR) validate
 
-backup: backup-cf-zone-records
+backup: backup-cf-zone-records backup-cf-page-rules
 backup-cf-zone-records:
 	pushd $(TF_DIR) ; \
 	cf-terraforming generate \
