@@ -21,6 +21,10 @@ terraform {
       source = "hashicorp/aws"
     }
 
+    cloudflare = {
+      source = "cloudflare/cloudflare"
+    }
+
     # DOCS: https://registry.terraform.io/providers/integrations/github/latest/docs
     # ENVS: GITHUB_TOKEN
     # CRED: https://github.com/settings/tokens
@@ -58,3 +62,5 @@ provider "aws" {
     }
   }
 }
+
+provider "cloudflare" {}

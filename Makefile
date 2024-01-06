@@ -1,5 +1,9 @@
 .DEFAULT_GOAL := version
 
+# If .secrets file exists, include the file and export all env vars.
+-include .secrets
+.EXPORT_ALL_VARIABLES:
+
 TF_DIR = src/cloud/infrastructure
 
 ## Workflow
@@ -18,6 +22,13 @@ fmt:
 
 validate: init
 	terraform -chdir=$(TF_DIR) validate
+
+cf-gen:
+	pushd $(TF_DIR) ; \
+	cf-terraforming generate \
+		--resource-type "cloudflare_record" \
+		--zone $$CLOUDFLARE_ZONE_ID | tee cf-gen.tf.gen ; \
+	popd
 
 ## CI
 
