@@ -27,7 +27,7 @@ cf-gen:
 	pushd $(TF_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_record" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee cf-gen.tf.gen ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee cf-gen.tf.backup ; \
 	popd
 
 ## CI

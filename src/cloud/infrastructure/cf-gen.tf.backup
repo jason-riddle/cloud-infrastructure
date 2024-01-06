@@ -1,0 +1,263 @@
+resource "cloudflare_record" "terraform_managed_resource_3ac8c2dcd49c20f7b4ae680cff05efd1" {
+  name    = "jasonriddle.com"
+  proxied = false
+  ttl     = 1
+  type    = "A"
+  value   = "185.212.71.169"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_3fad80604fc4c61237511f357c8709d6" {
+  name    = "www"
+  proxied = false
+  ttl     = 1
+  type    = "A"
+  value   = "185.212.71.169"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_2add4b004b2253a81c84991bdfd22a20" {
+  name    = "fm1._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "fm1.jasonriddle.com.dkim.fmhosted.com"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_e554e48b46a9e918df6256c1c2870882" {
+  name    = "fm2._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "fm2.jasonriddle.com.dkim.fmhosted.com"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_dbd4446a9f6ceae3af0d9f53dcef9023" {
+  name    = "fm3._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "fm3.jasonriddle.com.dkim.fmhosted.com"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_e7ece3e323e0532dbdf7d73109e1b697" {
+  name    = "mesmtp._domainkey"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "mesmtp.jasonriddle.com.dkim.fmhosted.com"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_e6a62889540c196602fad07f7a450638" {
+  name    = "nextcloud"
+  proxied = false
+  ttl     = 1
+  type    = "CNAME"
+  value   = "nx15310.your-storageshare.de"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_08753db2dc22e3ab966cc536446b19aa" {
+  name     = "jasonriddle.com"
+  priority = 10
+  proxied  = false
+  ttl      = 1
+  type     = "MX"
+  value    = "in1-smtp.messagingengine.com"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_349726874ef2016b5ce561d3c0878817" {
+  name     = "jasonriddle.com"
+  priority = 20
+  proxied  = false
+  ttl      = 1
+  type     = "MX"
+  value    = "in2-smtp.messagingengine.com"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_5a43121478b3b173b85f38aaafbda661" {
+  name     = "_caldavs._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 443
+    priority = 0
+    proto    = "_tcp"
+    service  = "_caldavs"
+    target   = "d3577736.caldav.fastmail.com"
+    weight   = 1
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_58f56d6fe3249437fb3e1485522f0826" {
+  name     = "_caldav._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 0
+    priority = 0
+    proto    = "_tcp"
+    service  = "_caldav"
+    target   = "."
+    weight   = 0
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_a79e870df8a402b73f2f8e724e016a53" {
+  name     = "_carddavs._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 443
+    priority = 0
+    proto    = "_tcp"
+    service  = "_carddavs"
+    target   = "d3577736.carddav.fastmail.com"
+    weight   = 1
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_dc41db3f6950135cbf7eed514754f4fe" {
+  name     = "_carddav._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 0
+    priority = 0
+    proto    = "_tcp"
+    service  = "_carddav"
+    target   = "."
+    weight   = 0
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_e26dbfd2c3716e1514ea40bd84a2ffdc" {
+  name     = "_imaps._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 993
+    priority = 0
+    proto    = "_tcp"
+    service  = "_imaps"
+    target   = "imap.fastmail.com"
+    weight   = 1
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_34bd88842cbc62b0fae071482df8f418" {
+  name     = "_imap._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 0
+    priority = 0
+    proto    = "_tcp"
+    service  = "_imap"
+    target   = "."
+    weight   = 0
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_e9ba1ce4264abbd4f4523e25c949b82c" {
+  name     = "_pop3s._tcp"
+  priority = 10
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 995
+    priority = 10
+    proto    = "_tcp"
+    service  = "_pop3s"
+    target   = "pop.fastmail.com"
+    weight   = 1
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_8cee3abc59d0e9032adbf777a2ee97a0" {
+  name     = "_pop3._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 0
+    priority = 0
+    proto    = "_tcp"
+    service  = "_pop3"
+    target   = "."
+    weight   = 0
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_6746853697b7736592879980dc7bf9a9" {
+  name     = "_submission._tcp"
+  priority = 0
+  proxied  = false
+  ttl      = 1
+  type     = "SRV"
+  zone_id  = "9f93875a5fa04d2c57407aac00a18ce9"
+  data {
+    name     = "jasonriddle.com"
+    port     = 587
+    priority = 0
+    proto    = "_tcp"
+    service  = "_submission"
+    target   = "smtp.fastmail.com"
+    weight   = 1
+  }
+}
+
+resource "cloudflare_record" "terraform_managed_resource_34f653ac1c6db251b1f4f589169eae9e" {
+  name    = "jasonriddle.com"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "ahrefs-site-verification_524988c0b33b9a4db8900da42872a05c6b85a05ba29200a03e080ff6bc4013a7"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
+resource "cloudflare_record" "terraform_managed_resource_e20afd7466963ad3079527daef4b9cf0" {
+  name    = "jasonriddle.com"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "v=spf1 include:spf.messagingengine.com ?all"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
