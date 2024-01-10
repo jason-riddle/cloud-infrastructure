@@ -243,6 +243,15 @@ resource "cloudflare_record" "terraform_managed_resource_6746853697b773659287998
   }
 }
 
+resource "cloudflare_record" "terraform_managed_resource_920cdbc8901f10bbac6a8cd979a93de2" {
+  name    = "_dmarc"
+  proxied = false
+  ttl     = 1
+  type    = "TXT"
+  value   = "v=DMARC1; p=none"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
 resource "cloudflare_record" "terraform_managed_resource_34f653ac1c6db251b1f4f589169eae9e" {
   name    = "jasonriddle.com"
   proxied = false
