@@ -42,6 +42,14 @@ backup-cf-page-rules:
 		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-page-rules.tf.backup ; \
 	popd
 
+backup-cf-zone-settings-overrides:
+	pushd $(TF_DIR) ; \
+	mkdir -p $(BKUP_DIR) ; \
+	cf-terraforming generate \
+		--resource-type "cloudflare_zone_settings_override" \
+		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-zone-settings-overrides.tf.backup ; \
+	popd
+
 ## CI
 
 fmt-check:
