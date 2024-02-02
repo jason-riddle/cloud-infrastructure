@@ -6,6 +6,8 @@
 
 TF_DIR = src/cloud/infrastructure
 
+BKUP_DIR = x/backups/cloudflare
+
 ## Workflow
 
 init:
@@ -26,16 +28,18 @@ validate: init
 backup: backup-cf-zone-records backup-cf-page-rules
 backup-cf-zone-records:
 	pushd $(TF_DIR) ; \
+	mkdir -p $(BKUP_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_record" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee cf-zone-records.tf.backup ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-zone-records.tf.backup ; \
 	popd
 
 backup-cf-page-rules:
 	pushd $(TF_DIR) ; \
+	mkdir -p $(BKUP_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_page_rule" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee cf-page-rules.tf.backup ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-page-rules.tf.backup ; \
 	popd
 
 ## CI
