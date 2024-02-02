@@ -43,6 +43,15 @@ resource "cloudflare_record" "terraform_managed_resource_dbd4446a9f6ceae3af0d9f5
   zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
 }
 
+resource "cloudflare_record" "terraform_managed_resource_1b0a46a9ac30057be62c6bb4b4d22db8" {
+  name    = "mattermost"
+  proxied = true
+  ttl     = 1
+  type    = "CNAME"
+  value   = "rampant-kagu.pikapod.net"
+  zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
+}
+
 resource "cloudflare_record" "terraform_managed_resource_e7ece3e323e0532dbdf7d73109e1b697" {
   name    = "mesmtp._domainkey"
   proxied = false
@@ -248,7 +257,7 @@ resource "cloudflare_record" "terraform_managed_resource_920cdbc8901f10bbac6a8cd
   proxied = false
   ttl     = 1
   type    = "TXT"
-  value   = "v=DMARC1; p=none"
+  value   = "v=DMARC1; p=none;"
   zone_id = "9f93875a5fa04d2c57407aac00a18ce9"
 }
 
