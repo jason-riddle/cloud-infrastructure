@@ -6,7 +6,8 @@
 
 TF_DIR = src/cloud/infrastructure
 
-BKUP_DIR = x/backups/cloudflare
+CF_BKUP_DIR = x/backups/cloudflare
+TS_BKUP_DIR = x/backups/tailscale
 
 ## Workflow
 
@@ -28,26 +29,32 @@ validate: init
 backup: backup-cf-zone-records backup-cf-page-rules
 backup-cf-zone-records:
 	pushd $(TF_DIR) ; \
-	mkdir -p $(BKUP_DIR) ; \
+	mkdir -p $(CF_BKUP_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_record" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-zone-records.tf.backup ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee $(CF_BKUP_DIR)/cf-zone-records.tf.backup ; \
 	popd
 
 backup-cf-page-rules:
 	pushd $(TF_DIR) ; \
-	mkdir -p $(BKUP_DIR) ; \
+	mkdir -p $(CF_BKUP_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_page_rule" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-page-rules.tf.backup ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee $(CF_BKUP_DIR)/cf-page-rules.tf.backup ; \
 	popd
 
 backup-cf-zone-settings-overrides:
 	pushd $(TF_DIR) ; \
-	mkdir -p $(BKUP_DIR) ; \
+	mkdir -p $(CF_BKUP_DIR) ; \
 	cf-terraforming generate \
 		--resource-type "cloudflare_zone_settings_override" \
-		--zone $$CLOUDFLARE_ZONE_ID | tee $(BKUP_DIR)/cf-zone-settings-overrides.tf.backup ; \
+		--zone $$CLOUDFLARE_ZONE_ID | tee $(CF_BKUP_DIR)/cf-zone-settings-overrides.tf.backup ; \
+	popd
+
+backup-ts-golinks:
+	pushd $(TF_DIR) ; \
+	mkdir -p $(TS_BKUP_DIR) ; \
+	curl -fsSL http://go/.export | tee $(TS_BKUP_DIR)/ts-golinks.jsonl ; \
 	popd
 
 ## CI
