@@ -26,6 +26,9 @@ fmt:
 validate: init
 	terraform -chdir=$(TF_DIR) validate
 
+ls: init
+	terraform -chdir=$(TF_DIR) state list
+
 backup: backup-cf-zone-records backup-cf-page-rules
 backup-cf-zone-records:
 	pushd $(TF_DIR) ; \
