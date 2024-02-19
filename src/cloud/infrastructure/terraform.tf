@@ -17,9 +17,9 @@ terraform {
     # CRED: https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users/details/terraform-cloud-infrastructure-system-user?section=permissions
     # NAME: terraform-cloud-infrastructure-system-user
     # PERM: AdministratorAccess
-    aws = {
-      source = "hashicorp/aws"
-    }
+    # aws = {
+    #   source = "hashicorp/aws"
+    # }
 
     cloudflare = {
       source = "cloudflare/cloudflare"
@@ -54,13 +54,13 @@ terraform {
   }
 }
 
-provider "aws" {
-  default_tags {
-    tags = {
-      ManagedBy = "Terraform"
-      Project   = "https://github.com/jason-riddle/cloud-infrastructure"
-    }
-  }
-}
+# provider "aws" {
+#   default_tags {
+#     tags = {
+#       ManagedBy = "Terraform"
+#       Project   = "https://github.com/jason-riddle/cloud-infrastructure"
+#     }
+#   }
+# }
 
 provider "cloudflare" {}
