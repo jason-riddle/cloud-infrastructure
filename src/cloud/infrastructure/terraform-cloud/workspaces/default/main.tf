@@ -17,6 +17,8 @@ data "tfe_workspace" "workspace" {
   organization = data.tfe_organization.org[0].name
 }
 
+# TFC_AWS_PROVIDER_AUTH = true
+#
 # resource "tfe_variable" "tfc_aws_provider_auth" {
 #   count = local.create ? 1 : 0
 
@@ -27,6 +29,8 @@ data "tfe_workspace" "workspace" {
 #   sensitive    = false
 # }
 
+# TFC_AWS_RUN_ROLE_ARN = arn:aws:iam::130659808697:role/terraform-iam-terraform-cloud-oidc-role
+#
 # resource "tfe_variable" "tfc_aws_run_role_arn" {
 #   count = local.create ? 1 : 0
 
@@ -37,6 +41,8 @@ data "tfe_workspace" "workspace" {
 #   sensitive    = false
 # }
 
+# TFC_AWS_WORKLOAD_IDENTITY_AUDIENCE = aws.workload.identity
+#
 # resource "tfe_variable" "tfc_aws_workload_identity_audience" {
 #   count = local.create ? 1 : 0
 
