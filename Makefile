@@ -29,7 +29,10 @@ validate: init
 ls: init
 	terraform -chdir=$(TF_DIR) state list
 
-backup: backup-cf-zone-records backup-cf-page-rules
+backup: backup-cf-zone-records backup-cf-page-rules \
+		backup-cf-zone-settings-overrides backup-ts-golinks
+
+
 backup-cf-zone-records:
 	pushd $(TF_DIR) ; \
 	mkdir -p $(CF_BKUP_DIR) ; \
