@@ -1,7 +1,3 @@
-# locals {
-#   timestamp = formatdate("MMM-YYYY", timestamp())
-# }
-
 data "tailscale_devices" "devices" {}
 
 ## GitHub Actions
@@ -9,7 +5,6 @@ data "tailscale_devices" "devices" {}
 # resource "tailscale_tailnet_key" "github_actions_ansible_role_tailscale_authkey" {
 #   count = 1
 
-#   # description = "${local.timestamp} -GHA- Ansible Role Tailscale Authkey"
 #   description = "-GHA- Ansible Role Tailscale Authkey"
 
 #   reusable      = true
@@ -32,7 +27,6 @@ output "github_actions_ansible_role_tailscale_authkey" {
 # resource "tailscale_tailnet_key" "github_actions_homelab_authkey" {
 #   count = 1
 
-#   # description = "${local.timestamp} -GHA- Homelab Authkey"
 #   description = "-GHA- Homelab Authkey"
 
 #   reusable      = true
@@ -57,7 +51,6 @@ output "github_actions_homelab_authkey" {
 resource "tailscale_tailnet_key" "homelab_authkey" {
   count = 1
 
-  # description = "${local.timestamp} Homelab Authkey"
   description = "Homelab Authkey"
 
   reusable      = true
