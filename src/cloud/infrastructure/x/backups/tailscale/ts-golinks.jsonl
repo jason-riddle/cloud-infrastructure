@@ -1,6 +1,6 @@
 {"Short":"add","Long":"http://jasons-home-assistant.greyhound-little.ts.net/_my_redirect/config_flow_start?domain={{with .Path}}{{PathEscape .}}{{end}}","Created":"2024-03-13T02:08:07Z","LastEdit":"2024-03-13T02:08:07Z","Owner":"jason.riddle11@gmail.com"}
 {"Short":"boxing","Long":"https://www.wellnessliving.com/schedule/hitfitsf","Created":"2024-03-01T20:10:59Z","LastEdit":"2024-03-01T20:10:59Z","Owner":"jason.riddle11@gmail.com"}
-{"Short":"home","Long":"http://jasons-home-assistant.greyhound-little.ts.net","Created":"2024-03-13T02:05:56Z","LastEdit":"2024-03-13T02:05:56Z","Owner":"jason.riddle11@gmail.com"}
+{"Short":"ha","Long":"http://jasons-home-assistant.greyhound-little.ts.net","Created":"2024-03-20T07:00:35Z","LastEdit":"2024-03-20T07:00:35Z","Owner":"jason.riddle11@gmail.com"}
 {"Short":"k8s","Long":"http://example.com","Created":"2024-03-13T01:54:26Z","LastEdit":"2024-03-13T01:54:26Z","Owner":"jason.riddle11@gmail.com"}
 {"Short":"massage","Long":"https://clients.mindbodyonline.com/asp/adm/adm_appt_search.asp?fl=true\u0026studioid=974257\u0026tabID=9","Created":"2024-02-03T16:16:37Z","LastEdit":"2024-02-03T16:19:19Z","Owner":"jason.riddle11@gmail.com"}
 {"Short":"nas","Long":"http://quickconnect.to/Jasons-Home-NAS","Created":"2023-06-24T21:58:42Z","LastEdit":"2023-06-24T21:58:42Z","Owner":"jason.riddle11@gmail.com"}
